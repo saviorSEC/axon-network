@@ -53,6 +53,12 @@
    "name": "THIRD-PARTY INFRA",
    "color": "#94a3b8",
    "note": "Salesforce Experience Cloud, Proofpoint MX, Cloudflare CDN, Route53, AWS/Azure hosting."
+  },
+  {
+   "id": "z-community",
+   "name": "COMMUNITY // CONNECT FLEET",
+   "color": "#4ade80",
+   "note": "Axon Community Connect — 321 programs, 624k+ integrated cameras, public stats API, fususregistry camera registries, Swell device shops."
   }
  ],
  "services": [
@@ -745,6 +751,80 @@
    "endpoints": [],
    "keys": [],
    "cert": null
+  },
+  {
+   "id": "s-acc",
+   "name": "axoncommunityconnect.com",
+   "zone": "z-community",
+   "role": "COMMUNITY PLATFORM",
+   "note": "Netlify. /locations.json = 321 communities. 75.2.60.5.",
+   "dns": [
+    "75.2.60.5"
+   ],
+   "endpoints": [
+    "/locations.json",
+    "/communities/"
+   ],
+   "keys": [],
+   "cert": null
+  },
+  {
+   "id": "s-fususone",
+   "name": "api.fususone.com",
+   "zone": "z-community",
+   "role": "PUBLIC ORG STATS API",
+   "note": "GET /api/public/organizations/<org>/stats/ — camera counts per community. 3.32.103.255.",
+   "dns": [
+    "3.32.103.255"
+   ],
+   "endpoints": [
+    "/api/public/organizations/{org}/stats/"
+   ],
+   "keys": [],
+   "cert": null
+  },
+  {
+   "id": "s-fususregistry",
+   "name": "*.fususregistry.com",
+   "zone": "z-community",
+   "role": "CAMERA REGISTRIES",
+   "note": "Per-community registry subdomains, /camera-registry public (200).",
+   "dns": [],
+   "endpoints": [
+    "/camera-registry"
+   ],
+   "keys": [],
+   "cert": "*.fususregistry.com"
+  },
+  {
+   "id": "s-orlando-connect",
+   "name": "orlandoconnect.orlando.gov",
+   "zone": "z-community",
+   "role": "ORLANDO CONNECT",
+   "note": "City portal + FususCORE device shop (Swell, fusus-atlanta tenant). 98.84.224.111.",
+   "dns": [
+    "98.84.224.111"
+   ],
+   "endpoints": [
+    "/shop/"
+   ],
+   "keys": [],
+   "cert": null
+  },
+  {
+   "id": "s-swell-shop",
+   "name": "fusus-atlanta.swell.store",
+   "zone": "z-community",
+   "role": "DEVICE STOREFRONT",
+   "note": "Swell headless commerce. Public storefront key pk_50S3RfW37Chw2hJdgaqwFh6gVg6i4GWi.",
+   "dns": [
+    "74.80.234.73"
+   ],
+   "endpoints": [],
+   "keys": [
+    "pk_50S3RfW37Chw2hJdgaqwFh6gVg6i4GWi (public)"
+   ],
+   "cert": null
   }
  ],
  "ipPools": [
@@ -1174,6 +1254,26 @@
   [
    "s-carbyne",
    "z-acquired"
+  ],
+  [
+   "s-acc",
+   "z-community"
+  ],
+  [
+   "s-fususone",
+   "z-community"
+  ],
+  [
+   "s-fususregistry",
+   "z-community"
+  ],
+  [
+   "s-orlando-connect",
+   "z-community"
+  ],
+  [
+   "s-swell-shop",
+   "z-community"
   ]
  ]
 }
