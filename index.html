@@ -102,11 +102,24 @@
     .attrib { font-size: 7.5px; letter-spacing: 1px; max-width: 62vw; }
     .tooltip { font-size: 9px; max-width: 70vw; }
   }
+  .tabs{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:30;display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px;max-width:96vw;overflow-x:auto}
+  .tabs a{color:var(--dim);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;border-radius:4px;white-space:nowrap}
+  .tabs a.active{color:var(--accent);background:rgba(0,255,170,.08);border:1px solid var(--line)}
+  .tabs a:hover{color:var(--text)}
+  @media (max-width:768px){.tabs{top:8px;padding:3px;gap:2px}.tabs a{font-size:8.5px;letter-spacing:1.5px;padding:6px 10px}}
 </style>
 </head>
 <body>
 
 <div id="graph"></div>
+<div class="tabs">
+  <a href="https://saviorsec.github.io/axon-network/" class="active">⌂ Internal</a>
+  <a href="https://saviorsec.github.io/axon-galaxy/">Galaxy 2D</a>
+  <a href="https://saviorsec.github.io/axon-globe/">Globe 3D</a>
+  <a href="https://saviorsec.github.io/axon-communities/">Communities</a>
+  <a href="https://saviorsec.github.io/axon-communities/usmap.html">US Map</a>
+</div>
+
 
 <div class="hud">
   <div class="title">AXON INTERNAL NETWORK // TOPOLOGY</div>
